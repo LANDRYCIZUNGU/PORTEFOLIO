@@ -1,0 +1,259 @@
+/* ça me tient à coeur que la création web respecte l'écoconception */
+/* je commence avec les variables  */
+:root {
+  --main-color: #005f3c;
+  --accent-color: #6dbf75;
+  --bg-color: #f0fdf4;
+  --text-color: #1b1b1b;
+  --muted-color: #666;
+  --white: #ffffff;
+  --font-family: 'Segoe UI', 'Arial', sans-serif;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  --radius: 10px;
+}
+/* ensuite le Reset &  la Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.7;
+  font-size: 16px;
+}
+/* je fais de sorte que l'en-tête ici doit etre attirant pour les visiteurs de mon portefolio */
+header {
+  background-color: var(--main-color);
+  color: var(--white);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+/* je determine le style pour Contenu principal */
+main {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+/* le pied de page doit avoir un style, je mets son style aussi */
+footer {
+  background-color: var(--main-color);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+/* le style pour le bouton */
+.btn {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: #58a463;
+}
+/* le style css pour la section projets et Compétences */
+.projets article,
+.competences ul {
+  margin: 1.5rem 0;
+  background-color: #ffffff;
+  border-left: 4px solid var(--accent-color);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.competences ol {
+  margin: 1.5rem 0;
+  background-color: #ffffff;
+  border-left: 4px solid var(--accent-color);
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  list-style-position: inside;
+}
+/* améliorons un peu la lisibilité des éléments en ajoutant des espaces */
+.competences li {
+  margin-bottom: 0.8rem;
+}
+.competences li strong {
+  color: var(--main-color);
+  font-weight: 600;
+}
+/* les formulaires doivent avoir un style aussi */
+form {
+  display: grid;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1rem;
+}
+button {
+  background-color: var(--accent-color);
+  color: var(--white);
+  padding: 0.6rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+}
+button:hover {
+  background-color: #58a463;
+}
+/* le style pour mes images, le portrait et la photo où on est au village */
+.portrait-bloc,
+.village-bloc,
+.a-propos-bloc {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+.image-texte {
+  flex: 1 1 300px;
+  text-align: center;
+}
+.portrait-img {
+  max-width: 220px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.village-img {
+  max-width: 320px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.caption {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--muted-color);
+  margin-top: 0.5rem;
+}
+/* le style pour le texte de la section À propos  */
+.texte-a-propos {
+  flex: 2 1 400px;
+}
+.texte-a-propos h2 {
+  margin-bottom: 1rem;
+  color: var(--main-color);
+}
+.texte-a-propos p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+/* mettons maintenant le style pour les liens mis dans le portefolio */
+.liens-utiles {
+  margin-top: 1.2rem;
+  list-style: none;
+  padding-left: 0;
+}
+.liens-utiles li {
+  margin-bottom: 0.5rem;
+}
+.liens-utiles a {
+  color: var(--main-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+.liens-utiles a:hover {
+  color: var(--accent-color);
+}
+/* ajoute aussi du style pour le tags 'projet' */
+.tags {
+  color: var(--muted-color);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+/* finissons en douceur avec le style de cette section 'Hero' */
+.hero {
+  background-color: #ffffff;
+  padding: 2.5rem 1.5rem;
+  border-left: 5px solid var(--main-color);
+  margin-top: 3rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.hero h2 {
+  color: var(--main-color);
+  margin-bottom: 1rem;
+}
+.hero p {
+  margin-bottom: 1.5rem;
+}
+/* amélioration lisibilité des articles projets */
+.projets article h3 {
+  color: var(--main-color);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.projets article p {
+  margin-bottom: 0.8rem;
+  text-align: justify;
+}
+.projets article .btn {
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+.projets article .tags {
+  margin-top: 0.6rem;
+  font-style: italic;
+  color: var(--muted-color);
+  font-size: 0.85rem;
+}
+.projets article p strong {
+  color: var(--accent-color);
+}
+/* style pour ce challenge de 'Responsive' */
+@media (max-width: 768px) {
+  .portrait-bloc,
+  .village-bloc,
+  .a-propos-bloc {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .texte-a-propos {
+    text-align: center;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

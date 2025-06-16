@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Horloge en temps réel</title>
+</head>
+<body>
+<h1>Horloge en temps réel</h1>
+<form onsubmit="return false;">
+<label for="heure">Heure actuelle :</label>
+<input type="text" id="heure" readonly>
+</form>
+<script>
+function afficherHeure() {
+const maintenant = new Date();
+const h = String(maintenant.getHours()).padStart(2, '0');
+const m = String(maintenant.getMinutes()).padStart(2, '0');
+const s = String(maintenant.getSeconds()).padStart(2, '0');
+document.getElementById("heure").value = `${h}:${m}:${s}`;
+setTimeout(afficherHeure, 1000); }
+afficherHeure(); // le lancement de l'horloge se fera dès le chargement
+</script>
+</body>
+</html>

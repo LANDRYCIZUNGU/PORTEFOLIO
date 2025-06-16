@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Calculateur de prêt hypothécaire</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 30px; max-width: 500px; }
+input, button { display: block; margin-top: 10px; padding: 8px; width: 100%; }
+#resultat { margin-top: 20px; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>Calculateur de prêt hypothécaire</h1>
+<form onsubmit="calculerPaiement(); return false;">
+<label for="montant">Montant du prêt (€) :</label>
+<input type="number" id="montant" min="0" placeholder="ex : 100000">
+<label for="taux">Taux d'intérêt annuel (%) :</label>
+<input type="number" id="taux" min="0" step="0.01" placeholder="ex : 5">
+<label for="duree">Durée du prêt (années) :</label>
+<input type="number" id="duree" min="1" placeholder="ex : 20">
+<button type="submit">Calculer le paiement mensuel</button>
+</form>
+<p id="resultat"></p>
+<script>
+function calculerPaiement() {
+const montant = parseFloat(document.getElementById("montant").value);
+const tauxAnnuel = parseFloat(document.getElementById("taux").value);
+const duree = parseInt(document.getElementById("duree").value);
+// Pour la validation des champs
+if (isNaN(montant) || montant <= 0) {
+alert("Veuillez entrer un montant de prêt valide (positif).");
+return; }
+if (isNaN(tauxAnnuel) || tauxAnnuel < 0) {
+alert("Veuillez entrer un taux d'intérêt annuel valide."); return; }
+if (isNaN(duree) || duree <= 0) { alert("Veuillez entrer une durée valide en années."); return; }
+const r = tauxAnnuel / 100 / 12; // taux mensuel
+const n = duree * 12; // nombre total de paiements
+let M;
+if (r === 0) {
+// Cas sans intérêt
+M = montant / n;} 
+else {// Formule d'amortissement
+M = montant * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1); }
+document.getElementById("resultat").textContent =
+"Paiement mensuel : " + M.toFixed(2) + " €"; }
+</script>
+</body>
+</html>
+

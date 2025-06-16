@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact – Landry Cizungu</title>
+<link rel="stylesheet" href="style.css" />
+<script defer src="script.js"></script>
+</head>
+<body>
+<header>
+<h1>Landry Cizungu</h1>
+<nav>
+<ul>
+<li><a href="index.html">Accueil</a></li>
+<li><a href="index.html#a-propos">À propos</a></li>
+<li><a href="projets.html">Projets</a></li>
+<li><a href="competences.html">Compétences</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<h2>Contact</h2>
+<p>Vous avez un projet ou souhaitez échanger ? Envoyez-moi un message !</p>
+<form id="contact-form">
+<label for="prenom">Prénom</label>
+<input type="text" id="prenom" name="prenom" required />
+<label for="nom">Nom</label>
+<input type="text" id="nom" name="nom" required />
+<label for="email">Email</label>
+<input type="email" id="email" name="email" required />
+<label for="message">Message</label>
+<textarea id="message" name="message" required></textarea>
+<button type="submit">Envoyer</button>
+</form>
+<div id="message-confirmation" class="hidden">Merci pour votre message !</div>
+</main>
+<footer>
+<p>Designed by Landry Cizungu – Tous droits réservés © 2025</p>
+</footer>
+</body>
+</html>
